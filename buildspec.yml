@@ -1,0 +1,41 @@
+version: 0.2
+
+env:
+  variables:
+    CI: "true"
+    PROJECT: "stage.haraki.es"
+
+
+phases: 
+  install:
+    commands:
+      - echo Entered the install phase...
+      
+      - echo Installing Mocha...
+
+      - npm install -g mocha
+
+      - echo Installing Yarn...
+      - npm install -g yarn
+
+      - yarn install
+    finally:
+      - echo Install phase ends
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+      - export COMMIT=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - export DATE=$(date '+%FT%T%z')
+      - export TARGET_PACKAGE="${PROJECT}--${DATE}--${COMMIT}.zip"
+      - echo "Target package is ${TARGET_PACKAGE}"
+    finally:
+      - echo Prebuild phase ends
+  build:
+    commands:
+      - yarn build --verbose
+      - aws s3 sync build/ "s3://stage.haraki.es"
+
+    finally:
+      - echo Build phase ends
+      - echo '${PROJECT}'
+      - echo '$TARGET_PACKAGE'

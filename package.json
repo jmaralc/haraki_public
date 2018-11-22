@@ -1,0 +1,35 @@
+{
+  "name": "haraki",
+  "version": "0.0.1",
+  "description": "Center for aikido supervision",
+  "main": "index.js",
+  "repository": {
+    "url": "",
+    "type": "git"
+  },
+  "author": "Javier Martinez <javmardeveloper@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "amazon-cognito-identity-js": "^3.0.3",
+    "create-react-app": "latest",
+    "cross-fetch": "^2.2.3",
+    "mocha": "^5.2.0",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-redux": "latest",
+    "react-router-dom": "latest",
+    "react-router-redux": "latest",
+    "react-scripts": "latest",
+    "redux": "latest",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "typeface-roboto": "^0.0.54"
+  },
+  "scripts": {
+    "start": "NODE_PATH=./src react-scripts start",
+    "build": "NODE_PATH=./src react-scripts build"
+  }
+}

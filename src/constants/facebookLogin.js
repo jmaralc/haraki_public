@@ -1,0 +1,1 @@
+export const FB_APP_ID = "302775710569766"
