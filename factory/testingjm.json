@@ -1,0 +1,9 @@
+{
+	"name": "testingjm",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "80f25566-04cc-4d72-95cf-9a4779f9ccda",
+		"tenantId": "13ef2a68-6f6e-4cfc-8e80-f12e3b804b1f"
+	}
+}
